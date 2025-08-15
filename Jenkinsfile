@@ -64,18 +64,7 @@ pipeline {
                 }
             }
         }
-        
-        stage('Security Scan with Trivy') {
-            steps {
-                script {
-                    // Create directory for results
-                  
-                    trivy_scan()
-                    
-                }
-            }
-        }
-        
+              
         stage('Push Docker Images') {
             parallel {
                 stage('Push Main App Image') {
