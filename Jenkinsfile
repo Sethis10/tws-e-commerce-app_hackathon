@@ -15,8 +15,7 @@ pipeline {
     stages {     
         stage('Clone Repository') {
             steps {
-                script {
-                    clone("https://github.com/Sethis10/tws-e-commerce-app_hackathon.git","master")
+                git credentialsId: 'github-credentials', url: 'https://github.com/Sethis10/tws-e-commerce-app_hackathon'
                 }
             }
         }
