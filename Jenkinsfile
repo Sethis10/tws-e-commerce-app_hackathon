@@ -12,7 +12,15 @@ pipeline {
         GIT_BRANCH = "master"
     }
     
-    stages {     
+    stages {
+        stage('Cleanup Workspace') {
+            steps {
+                script {
+                    clean_ws()
+                }
+            }
+        }
+        
         stage('Clone Repository') {
             steps {
                 git credentialsId: 'github-credentials', url: 'https://github.com/Sethis10/tws-e-commerce-app_hackathon'
