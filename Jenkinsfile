@@ -26,7 +26,6 @@ pipeline {
                 git credentialsId: 'github-credentials', url: 'https://github.com/Sethis10/tws-e-commerce-app_hackathon'
                 }
             }
-        }
         
         stage('Build Docker Images') {
             parallel {
