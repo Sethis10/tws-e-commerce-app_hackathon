@@ -12,15 +12,7 @@ pipeline {
         GIT_BRANCH = "master"
     }
     
-    stages {
-        stage('Cleanup Workspace') {
-            steps {
-                script {
-                    clean_ws()
-                }
-            }
-        }
-        
+    stages {     
         stage('Clone Repository') {
             steps {
                 script {
